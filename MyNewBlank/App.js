@@ -1,23 +1,45 @@
 // * Zona 1: importaciones
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View , Button } from 'react-native';
+import React,{useState} from 'react';
 
-const Texto=(props) => {
-  const {contenido} = props;
+const Texto = () => {
+  const [contenido, setContenido] = useState('Hola Mundo react native');
+  const actualizarTexto = () => {
+    setContenido('estado actualizado del texto');
+  }
   return (
-    <Text>{contenido}</Text>
+    <Text onPress={actualizarTexto}>{contenido}</Text>
   );
 }
+
+const Boton = ({ títuloInicial, mensajeAlPresionar }) => {
+  const [titulo, setTitulo] = useState(títuloInicial);
+
+  const manejarPress = () => {
+    // Cambio de estado local (opcional)
+    setTitulo('¡Presionado!');
+    // Lógica externa (alert, llamada a API, etc.)
+    alert(mensajeAlPresionar);
+  };
+
+  return (
+    <Button
+      title={titulo}
+      onPress={manejarPress}
+    />
+  );
+};
+
 // * Zona 2: Zona de Main
 export default function App() {
   return (
     <View style={styles.container}>
-      <Texto></Texto>
-      <Button title="Tlabaja" onPress={() => alert('Tlabaja tines que tlabajar')} />
+      <Boton títuloInicial="Tlabaja" mensajeAlPresionar="Tlabaja tines que tlabajar"></Boton>
       <StatusBar style="auto" />
-      <Texto contenido="hola"></Texto>
-      <Texto contenido="mundo"></Texto>
-      <Texto contenido="react native"></Texto>
+      <Texto></Texto>
+      <Texto></Texto>
+      <Texto></Texto>
     </View>
   );
 }
