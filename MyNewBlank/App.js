@@ -1,54 +1,56 @@
-// * Zona 1: importaciones
+/*Zona 1: Importaciones */
+
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View , Button } from 'react-native';
-import React,{useState} from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import React, {useState} from 'react';
 
-const Texto = () => {
-  const [contenido, setContenido] = useState('Hola Mundo react native');
-  const actualizarTexto = () => {
-    setContenido('estado actualizado del texto');
-  }
-  return (
-    <Text onPress={actualizarTexto}>{contenido}</Text>
-  );
-}
 
-const Boton = ({ títuloInicial, mensajeAlPresionar }) => {
-  const [titulo, setTitulo] = useState(títuloInicial);
-
-  const manejarPress = () => {
-    // Cambio de estado local (opcional)
-    setTitulo('¡Presionado!');
-    // Lógica externa (alert, llamada a API, etc.)
-    alert(mensajeAlPresionar);
-  };
-
-  return (
-    <Button
-      title={titulo}
-      onPress={manejarPress}
-    />
-  );
+const Texto=({style}) => {
+  const [contenido,setContenido]=useState('Hola Mundo ReactNative')
+  const actualizaTexto=()=>{setContenido('Estado actualizado del Text')};
+  return(
+    <Text style={[styles.text,style]} onPress={actualizaTexto}>{contenido}</Text>
+  )
 };
 
-// * Zona 2: Zona de Main
+
+/*Zona 2: Main */
+
 export default function App() {
   return (
+
     <View style={styles.container}>
-      <Boton títuloInicial="Tlabaja" mensajeAlPresionar="Tlabaja tines que tlabajar"></Boton>
+
+      <Texto style={styles.red}></Texto>
+      <Texto style={styles.green}></Texto>
+      <Texto style={styles.blue}></Texto>
       <StatusBar style="auto" />
-      <Texto></Texto>
-      <Texto></Texto>
-      <Texto></Texto>
     </View>
   );
 }
-// * Zona 3: Zona de estilos
+
+
+/*Zona 3: Estetica del screen */
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-',
+  },
+  text: {
+    color: 'white',
+    fontSize: 20,
+    height: 100,
+    width: 100,
+  },
+  red: {
+    backgroundColor: 'red',
+  },
+  green: {
+    backgroundColor: 'green',
+  },
+  blue: {
+    backgroundColor: 'blue',
   },
 });
