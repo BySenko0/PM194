@@ -1,33 +1,89 @@
-import * as SplashScreen from 'expo-splash-screen';
 import { ImageBackground } from 'react-native';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
-
-SplashScreen.preventAutoHideAsync();
+import { StyleSheet, Text, TextInput, View, ScrollView } from 'react-native';
 
 export default function App() {
-  const [appReady, setAppready] = useState(false);
-
-  useEffect(() => {
-    setTimeout(async () => {
-      setAppready(true);
-      await SplashScreen.hideAsync();
-    }, 2000);
-  }, []);
-
   return(
-    <ImageBackground
-      source={require('./assets/art3.jpeg')}
-      style={styles.background}
-      resizeMode="cover"
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>uwu Artemio uwu</Text>
-        <Text style={styles.subtitle}>{appReady ? 'Carga completa': 'Esta cargando'}</Text>
-      </View>
-    </ImageBackground>
+    <ScrollView contentContainerStyle={styles.background }showsVerticalScrollIndicator={false}>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>                            
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+      <text>hola mijo</text>
+    </ScrollView>
   )
 }
+
+
 
 const styles = StyleSheet.create({
   background: {
@@ -40,12 +96,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.5)',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  title: {
-    color: 'white',
-    fontSize: 32,
-    fontWeight: 'bold',
-    marginBottom: 10,
   },
   subtitle: {
     color: 'white',
