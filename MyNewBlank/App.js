@@ -1,104 +1,50 @@
-import { ImageBackground } from 'react-native';
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, TextInput, View, ScrollView } from 'react-native';
+import { View, Text, ActivityIndicator, Button, StyleSheet } from "react-native-web";
+import React, { useState, useEffect } from "react";
 
 export default function App() {
-  return(
-    <ScrollView contentContainerStyle={styles.background }showsVerticalScrollIndicator={false}>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>                            
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-      <text>hola mijo</text>
-    </ScrollView>
-  )
+  const [loading, setLoading] = useState(true);
+  const [message, setMessage] = useState("");
+
+  const simularCarga = () => {
+    setLoading(true);
+    setMessage("");
+    setTimeout(() => {
+      setLoading(false);
+      setMessage("Carga completada");
+    }, 3000);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.titulo}>Carga</Text>
+      {loading ? (
+        <ActivityIndicator size="large" color="#0000ff" />
+      ) : (
+        <Text style={styles.texto}>Cargando...</Text>
+      )}
+      <Button title="Simular carga" onPress={simularCarga} />
+      {message !== '' && <Text style={styles.exito}>{message}</Text>}
+    </View>
+  );
 }
 
-
-
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-  },
   container: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
-  subtitle: {
-    color: 'white',
-    fontSize: 18,
+  titulo: {
+    fontSize: 22,
+    marginBottom: 20,
+  },
+  texto: {
+    fontSize: 15,
+    color: 'gray'
+  },
+  exito: {
+    fontSize: 15,
+    color: 'green',
+    marginTop: 20,
   }
 });
