@@ -4,11 +4,11 @@
     "slug": "MyNewBlank",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/art2.jpeg",
+    "icon": "./assets/art1.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/art2.jpeg",
+      "image": "./assets/art1.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,13 +18,13 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/art2.jpeg",
+        "foregroundImage": "./assets/art1.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/art2.jpeg"
+      "favicon": "./assets/art1.png"
     },
     "plugins": [
       [
